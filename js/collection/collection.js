@@ -1,0 +1,1 @@
+contact_list = Backbone.Collection.extend();

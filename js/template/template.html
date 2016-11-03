@@ -1,0 +1,68 @@
+<!--  This Template is for Listing Purpose -->
+<script type="text/template" id="addNew">
+	<h2>List Of Contacts</h2>
+	<p class="text-center">
+    	<button class="btn btn-lg btn-outline" id="create">Add Contact</button>
+  	</p>
+  	<ul class="media-list  contacts-container" id="contList">
+
+  	</ul>
+</script>
+
+<!--  This Template is for Add/Edit Purpose -->
+<script type="text/template" id="contact-new">
+	<form class="form-horizontal contract-form">
+		<div class="form-group">
+	          <label class="col-sm-4 control-label">Full Name:</label>
+	          <div class="col-sm-6">
+	            <input type="text" name="fullname" class="form-control fullname contact-tel-input">
+	          </div>
+	    </div>
+	    <div class="form-group">
+	          <label class="col-sm-4 control-label">Email:</label>
+	          <div class="col-sm-6">
+	            <input type="email" name="email" class="form-control email contact-tel-input">
+	          </div>
+	    </div>
+	    <div class="form-group">
+	          <label class="col-sm-4 control-label">Telephone Number:</label>
+	          <div class="col-sm-6">
+	            <input type="tel" name="telenum" class="form-control telenum contact-tel-input">
+	          </div>
+	    </div>
+	    <div class="form-group">
+	          <div class="col-sm-offset-4 col-sm-3">
+	            <button type="button" id="submit" class="btn btn-outline btn-lg btn-block">Submit</button>
+	          </div>
+	          <div class="col-sm-3">
+	            <button type="button" id="cancel" class="btn btn-outline btn-lg btn-block">Cancel</button>
+	          </div>
+	    </div>
+    </form>
+</script>
+
+<!--  This Template is for Single Item -->
+<script type="text/template" id="listItem">
+	<% _.each(collection, function( obj, ind ){ %>
+		<li class="media col-md-6 col-lg-4">
+			<div class="thumbnail"><img class="media-object" src="image/avatar.gif"></div>
+			<div class="media-heading" data-index="<%=obj.id %>">
+				<h3><%=obj.fullname %>
+					<small>
+						<span style="cursor: pointer;" class="glyphicon edit glyphicon-pencil"></span>
+						<span style="cursor: pointer;" class="glyphicon delete glyphicon-trash"></span>
+					</small>
+				</h3>
+			</div>
+			<div class="media-body">
+				<dl>
+					<dt>Phone Number:</dt>
+					<dd><%=obj.email %></dd>
+					<dt>Email:</dt>
+					<dd><%=obj.telenum %></dd>
+				</dl>
+			</div>
+			<hr>
+		</li>
+	<% }); %>
+</script>
